@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <title>Myself Page</title>
+<link rel="stylesheet" href="Mystyle.css">
+</head>
+
+<body>
+
+ <!-- Animated Background -->
+    <div class="glow"></div>
+
+    <!-- Navigation Bar -->
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        Julio du Plessis<span>.</span>
+    </a>
+
+    <ul class="nav-links">
+        <!-- Animated glass bubble -->
+        <span class="nav-indicator"></span>
+
+        <li>
+            <a href="index.html" class="nav-link">
+                &#127968; Home
+            </a>
+        </li>
+
+        <li>
+            <a href="Myself.html" class="nav-link active">
+                &#128100; Myself
+            </a>
+        </li>
+
+        <li>
+            <a href="Work.html" class="nav-link">
+                &#128187; Work
+            </a>
+        </li>
+
+        <li>
+            <a href="Hobbies.html" class="nav-link">
+                &#128279; Hobbies
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html" class="nav-link">
+                &#9993; Contact
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const background = document.querySelector(".constellation-bg");
+    const stars = document.querySelectorAll(".star-point");
+
+    if (!background || window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches) {
+        return;
+    }
+
+    background.addEventListener("pointermove", (event) => {
+        const rect = background.getBoundingClientRect();
+
+        const mouseX = event.clientX - rect.left;
+        const mouseY = event.clientY - rect.top;
+
+        stars.forEach((star) => {
+            const starRect = star.getBoundingClientRect();
+
+            const starX = starRect.left + starRect.width / 2;
+            const starY = starRect.top + starRect.height / 2;
+
+            const distance = Math.hypot(
+                event.clientX - starX,
+                event.clientY - starY
+            );
+
+            star.classList.toggle(
+                "near-cursor",
+                distance < 110
+            );
+        });
+    });
+
+    background.addEventListener("pointerleave", () => {
+        stars.forEach((star) => {
+            star.classList.remove("near-cursor");
+        });
+    });
+});
+</script>
+
+</nav>
+
+    <!-- Your existing animated background -->
+    <div class="constellation-bg" aria-hidden="true">
+        <!-- Add your existing constellation SVG here -->
+    </div>
+
+    <main class="site-content">
+
+        <!-- ABOUT ME -->
+        <section class="about-section" id="about">
+
+            <div class="profile-image">
+                <img src="Julioportfolio.jpeg" alt="Portrait of me">
+            </div>
+
+            <div class="about-text">
+                <p class="eyebrow">GET TO KNOW ME</p>
+
+                <h1>About <span>Me.</span></h1>
+
+                <p>
+                    Hello! I'm Julio, an aspiring IT professional with
+                    an interest in technology, troubleshooting and
+                    web development.
+                </p>
+
+                <p>
+                    I enjoy learning how computers work, developing
+                    my technical skills and building projects that
+                    help me grow. I'm currently working on improving
+                    my HTML and CSS skills while expanding my
+                    knowledge of IT support and networking.
+                </p>
+
+                <p>
+                    My goal is to continue learning, gain practical
+                    experience and build a career in technology.
+                </p>
+
+                <a href="contact.html" class="contact-button">
+                    Let's Connect
+                </a>
+            </div>
+
+        </section>
+
+ 
+
+</div>
+
+        <!-- SKILLS -->
+        <section class="skills-section" id="skills">
+
+            <p class="eyebrow">WHAT I'M LEARNING</p>
+            <h2>My <span>Skills</span></h2>
+
+            <div class="skills-grid">
+
+                <article class="skill-card">
+        <!-- HTML -->
+                  <div class="skill-icon html-icon">
+                  <img src="images/html.jpg" alt="HTML5 logo">
+                  </div>
+                    <h3>HTML</h3>
+                    <p>Building the structure of websites.</p>
+                    <div class="skill-bar">
+                        <span style="width: 45%"></span>
+                    </div>
+                    <small>Currently learning</small>
+                </article>
+
+                <article class="skill-card">
+        <!-- CSS -->
+                  <div class="skill-icon css-icon">
+                  <img src="images/css.jpg" alt="CSS3 logo">
+                  </div>
+                    <h3>CSS</h3>
+                    <p>Styling layouts, colours and animations.</p>
+                    <div class="skill-bar">
+                        <span style="width: 35%"></span>
+                    </div>
+                    <small>Currently learning</small>
+                </article>
+
+                <article class="skill-card">
+        <!-- JavaScript -->
+                  <div class="skill-icon js-icon">
+                  <img src="images/javascript.jpg" alt="JavaScript logo">
+                  </div>
+                    <h3>JavaScript</h3>
+                    <p>Exploring interactive website features.</p>
+                    <div class="skill-bar">
+                        <span style="width: 10%"></span>
+                    </div>
+                    <small>Future learning goal</small>
+                </article>
+
+                <article class="skill-card">
+        <!-- IT Support -->
+                 <div class="skill-icon it-icon">
+                 <img src="images/it-support.jpg" alt="IT support icon">
+                 </div>
+                    <h3>IT Support</h3>
+                    <p>Learning troubleshooting and computer systems.</p>
+                    <div class="skill-bar">
+                        <span style="width: 40%"></span>
+                    </div>
+                    <small>Developing experience</small>
+                </article>
+
+                <article class="skill-card">
+        <!-- Networking -->
+                 <div class="skill-icon network-icon">
+                 <img src="images/networking.jpg" alt="Networking icon">
+                </div>
+                    <h3>Networking</h3>
+                    <p>Working towards networking knowledge.</p>
+                    <div class="skill-bar">
+                        <span style="width: 15%"></span>
+                    </div>
+                    <small>Learning goal</small>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- EDUCATION AND EXPERIENCE -->
+        <section class="timeline-section" id="journey">
+
+            <p class="eyebrow">MY PROGRESS</p>
+            <h2>Education &amp; <span>Experience</span></h2>
+
+            <div class="timeline">
+
+                <article class="timeline-card left">
+                    <span class="timeline-date">EDUCATION</span>
+                    <h3>My Education</h3>
+                    <p>
+                        Curro Academy Pretoria GP<br>
+                        Graduate Academic Achievement Award<br>
+                        Matriculated 2024
+                    </p>
+                </article>
+
+                <article class="timeline-card right">
+                    <span class="timeline-date">EXPERIENCE</span>
+                    <h3>IT Experience</h3>
+                    <p>
+                        Help desk Technition<br>
+                        Zutari - Pretoria, South Africa<br>
+                        Referral number 0832904912-Cheney Harris Relationship: Manager<br>
+                        Duration  03/2025 - 08/2026
+                    </p>
+                </article>
+
+                <article class="timeline-card left">
+                    <span class="timeline-date">PROJECTS</span>
+                    <h3>Web Development</h3>
+                    <p>
+                        Building my portfolio and learning
+                        to create websites with HTML and CSS.
+                    </p>
+                </article>
+
+                <article class="timeline-card right">
+                    <span class="timeline-date">FUTURE GOALS</span>
+                    <h3>CompTIA A+ &amp; Network+</h3>
+                    <p>
+                        Working towards expanding my IT
+                        knowledge and professional qualifications.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <section class="feature-section section reveal" aria-labelledby="features-heading">
+      <div class="section-heading">
+        <p class="eyebrow">A FEW THINGS ABOUT ME</p>
+        <h2 id="features-heading">The little details <span>that make me, me.</span></h2>
+        <p>Explore the clock, my ride, and a little music corner. Hover or focus on the features to see them come alive.</p>
+      </div>
+
+      <div class="feature-grid">
+        <!-- Birthday feature -->
+        <article class="feature-card birthday-card">
+          <div class="card-topline"><span class="card-icon">✦</span><span class="card-label">BIRTHDAY CLOCK</span></div>
+          <p class="feature-kicker">Another year, another level.</p>
+          <div class="age-display"><span id="age-years">--</span><small>YEARS OLD</small></div>
+          <div class="birthday-stats">
+            <div><strong id="age-days">---</strong><span>days since birthday</span></div>
+            <div><strong id="age-clock">--:--:--</strong><span>today's time</span></div>
+          </div>
+          <div class="birthday-countdown">
+            <span class="countdown-label">NEXT BIRTHDAY</span>
+            <strong id="birthday-countdown">Calculating...</strong>
+          </div>
+          <p class="birthday-date">13 DECEMBER 2006</p>
+        </article>
+
+        <!-- Car feature -->
+        <article class="feature-card vehicle-card">
+          <div class="card-topline"><span class="card-icon">✦</span><span class="card-label">MY RIDE</span></div>
+          <div class="car-scene" id="carScene" tabindex="0" role="button" aria-label="Activate the car animation">
+            <div class="car-aura"></div>
+            <div class="music-notes" aria-hidden="true">
+              <span>♪</span><span>♫</span><span>♬</span><span>♪</span><span>♫</span><span>♬</span>
+            </div>
+            <div class="vibration vibration-left"></div><div class="vibration vibration-right"></div>
+            <img class="seat-ibiza" src="Car image.jfif" alt="Red 2007 Seat Ibiza Sport hatchback">
+          </div>
+          <h3>Seat Ibiza Sport <span class="year-pill">2007</span></h3>
+          <p class="feature-description">Small hatchback. Big personality.</p>
+          <div class="vehicle-status">
+            <div class="status-bubble"><span class="status-dot"></span><span><strong>Valid licence</strong><small>Driver ready</small></span></div>
+            <div class="status-bubble"><span class="status-dot"></span><span><strong>Vehicle available</strong><small>My own ride</small></span></div>
+          </div>
+          <p class="micro-hint">Hover, tap, or focus the car for a little animation.</p>
+        </article>
+
+        <!-- Music feature -->
+        <article class="feature-card music-card" id="musicCard">
+          <div class="card-topline"><span class="card-icon">♫</span><span class="card-label">ON REPEAT</span></div>
+          <div class="vinyl-stage" id="vinylStage" tabindex="0" role="button" aria-label="Change album artwork">
+            <div class="music-floats" aria-hidden="true"><span>♪</span><span>♫</span><span>♬</span><span>♪</span></div>
+            <div class="vinyl-record" id="vinylRecord">
+              <div class="vinyl-grooves"></div>
+              <img id="albumArtwork" class="album-artwork" src="images/album1.jpg" alt="Album artwork 1">
+              <div class="record-hole"></div>
+            </div>
+          </div>
+          <p class="feature-kicker">MY MUSIC ROTATION</p>
+          <h3 id="albumTitle">Album One</h3>
+          <p class="feature-description" id="albumArtist">Add your favourite artist</p>
+          <div class="album-dots" id="albumDots" aria-label="Album selection">
+            <button class="album-dot active" type="button" data-album="0" aria-label="Show album one"></button>
+            <button class="album-dot" type="button" data-album="1" aria-label="Show album two"></button>
+            <button class="album-dot" type="button" data-album="2" aria-label="Show album three"></button>
+          </div>
+          <audio id="musicAudio" preload="metadata" muted>
+          </audio>
+          <div class="music-controls">
+            <button class="button button-primary" id="playMusic" type="button">▶ Play preview</button>
+            <button class="button button-quiet" id="muteMusic" type="button" aria-pressed="true">Unmute sound</button>
+          </div>
+          <p class="micro-hint" id="musicStatus" aria-live="polite">Starts muted. Add your own short audio preview to enable playback.</p>
+        </article>
+      </div>
+    </section>    
+
+    <footer class="footer">
+        <p>Designed and built by yours truly, Julio.</p>
+    </footer>
+
+</body>
+</html>
+
+<!-- Animated constellation background -->
+<div class="constellation-bg" aria-hidden="true">
+    <svg class="constellation-svg"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 1440 900"
+         preserveAspectRatio="xMidYMid slice">
+
+        <defs>
+            <!-- Purple and white star glow -->
+            <filter id="starGlow" x="-200%" y="-200%"
+                    width="400%" height="400%">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+
+            <filter id="softGlow" x="-100%" y="-100%"
+                    width="300%" height="300%">
+                <feGaussianBlur stdDeviation="1.5"/>
+            </filter>
+        </defs>
+
+        <!-- Constellation 1 -->
+        <g class="constellation constellation-one">
+            <path class="constellation-line"
+                  d="M100 150 L180 95 L255 155 L320 80 L390 130 L450 65"/>
+
+            <path class="constellation-line"
+                  d="M180 95 L195 205 L255 155"/>
+
+            <circle class="star-point" cx="100" cy="150" r="2.5"/>
+            <circle class="star-point" cx="180" cy="95" r="3"/>
+            <circle class="star-point" cx="255" cy="155" r="2"/>
+            <circle class="star-point" cx="320" cy="80" r="3"/>
+            <circle class="star-point" cx="390" cy="130" r="2"/>
+            <circle class="star-point" cx="450" cy="65" r="3"/>
+            <circle class="star-point" cx="195" cy="205" r="2"/>
+        </g>
+
+        <!-- Constellation 2 -->
+        <g class="constellation constellation-two">
+            <path class="constellation-line"
+                  d="M850 120 L925 190 L1010 145 L1080 225 L1165 175 L1240 250"/>
+
+            <path class="constellation-line"
+                  d="M1010 145 L1035 65 L1100 90 L1165 175"/>
+
+            <circle class="star-point" cx="850" cy="120" r="2"/>
+            <circle class="star-point" cx="925" cy="190" r="3"/>
+            <circle class="star-point" cx="1010" cy="145" r="3"/>
+            <circle class="star-point" cx="1080" cy="225" r="2"/>
+            <circle class="star-point" cx="1165" cy="175" r="3"/>
+            <circle class="star-point" cx="1240" cy="250" r="2"/>
+            <circle class="star-point" cx="1035" cy="65" r="2.5"/>
+            <circle class="star-point" cx="1100" cy="90" r="2"/>
+        </g>
+
+        <!-- Constellation 3 -->
+        <g class="constellation constellation-three">
+            <path class="constellation-line"
+                  d="M170 560 L245 505 L310 565 L370 490 L455 535"/>
+
+            <path class="constellation-line"
+                  d="M245 505 L255 420 L320 390 L370 490"/>
+
+            <circle class="star-point" cx="170" cy="560" r="2"/>
+            <circle class="star-point" cx="245" cy="505" r="3"/>
+            <circle class="star-point" cx="310" cy="565" r="2"/>
+            <circle class="star-point" cx="370" cy="490" r="3"/>
+            <circle class="star-point" cx="455" cy="535" r="2"/>
+            <circle class="star-point" cx="255" cy="420" r="2"/>
+            <circle class="star-point" cx="320" cy="390" r="3"/>
+        </g>
+
+        <!-- Constellation 4 -->
+        <g class="constellation constellation-four">
+            <path class="constellation-line"
+                  d="M850 610 L920 540 L1000 585 L1075 510 L1150 565 L1230 495"/>
+
+            <path class="constellation-line"
+                  d="M1000 585 L1020 680 L1100 700 L1150 565"/>
+
+            <circle class="star-point" cx="850" cy="610" r="2"/>
+            <circle class="star-point" cx="920" cy="540" r="3"/>
+            <circle class="star-point" cx="1000" cy="585" r="2.5"/>
+            <circle class="star-point" cx="1075" cy="510" r="3"/>
+            <circle class="star-point" cx="1150" cy="565" r="2"/>
+            <circle class="star-point" cx="1230" cy="495" r="3"/>
+            <circle class="star-point" cx="1020" cy="680" r="2"/>
+            <circle class="star-point" cx="1100" cy="700" r="2.5"/>
+        </g>
+
+        <!-- Extra distant stars -->
+        <g class="distant-stars">
+            <circle cx="550" cy="180" r="1.5"/>
+            <circle cx="650" cy="310" r="1"/>
+            <circle cx="740" cy="90" r="1.5"/>
+            <circle cx="580" cy="680" r="1.5"/>
+            <circle cx="720" cy="780" r="1"/>
+            <circle cx="1320" cy="380" r="1.5"/>
+            <circle cx="90" cy="370" r="1"/>
+            <circle cx="700" cy="460" r="1.5"/>
+            <circle cx="1320" cy="760" r="1"/>
+            <circle cx="500" cy="820" r="1.5"/>
+            <circle cx="800" cy="350" r="1"/>
+            <circle cx="1350" cy="100" r="1.5"/>
+        </g>
+
+    </svg>
+</div>
+
+<div class="stars"></div>
+<div class="stars stars-2"></div>
+<div class="stars stars-3"></div>
+
+    
+    <!-- Animated Background -->
+    <div class="glow"></div>
+
+<script>
+(() => {
+    const birthday = new Date(2006, 11, 13);
+    const yearOutput = document.getElementById("age-years");
+    const daysOutput = document.getElementById("age-days");
+    const clockOutput = document.getElementById("age-clock");
+    const countdownOutput =
+        document.getElementById("birthday-countdown");
+
+    if (!yearOutput || !daysOutput ||
+        !clockOutput || !countdownOutput) {
+        return;
+    }
+
+    const pad = (number, length = 2) =>
+        String(number).padStart(length, "0");
+
+    function updateBirthdayClock() {
+        const now = new Date();
+
+        let years = now.getFullYear() - birthday.getFullYear();
+
+        const thisBirthday = new Date(
+            now.getFullYear(), 11, 13
+        );
+
+        if (now < thisBirthday) {
+            years--;
+        }
+
+        const lastBirthday = new Date(
+            birthday.getFullYear() + years, 11, 13
+        );
+
+        const nextBirthday = new Date(
+            now.getFullYear() + (now >= thisBirthday ? 1 : 0),
+            11, 13
+        );
+
+        const elapsed = now - lastBirthday;
+        const days = Math.floor(elapsed / 86400000);
+        const hours = Math.floor(elapsed / 3600000) % 24;
+        const minutes = Math.floor(elapsed / 60000) % 60;
+        const seconds = Math.floor(elapsed / 1000) % 60;
+
+        yearOutput.textContent = pad(years);
+        daysOutput.textContent = pad(days, 3);
+        clockOutput.textContent =
+            `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+
+        const remaining = nextBirthday - now;
+        const remainingDays = Math.floor(remaining / 86400000);
+        const remainingHours = Math.floor(
+            remaining / 3600000
+        ) % 24;
+        const remainingMinutes = Math.floor(
+            remaining / 60000
+        ) % 60;
+        const remainingSeconds = Math.floor(
+            remaining / 1000
+        ) % 60;
+
+        countdownOutput.textContent =
+            `Next birthday in ${remainingDays}d ` +
+            `${remainingHours}h ${remainingMinutes}m ` +
+            `${remainingSeconds}s`;
+    }
+
+    updateBirthdayClock();
+    setInterval(updateBirthdayClock, 1000);
+})();
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(
+        ".about-section, .skills-section, " +
+        ".timeline-section, .feature-section"
+    );
+
+    if (
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches
+    ) {
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+    sections.forEach((section) => {
+        section.classList.add("scroll-reveal");
+        observer.observe(section);
+    });
+});
+</script>
+
+
+   <script src="navbar.js"></script>   
+</body>
+</html>

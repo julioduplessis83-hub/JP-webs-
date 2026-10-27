@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ibiza Night Drive | Julio du Plessis</title>
+<link rel="stylesheet" href="Hobbiestyle.css">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+</head>
+<body>
+<div class="glow"></div>
+<a href="Hobbies.html" class="back-to-arcade">← BACK TO ARCADE</a>
+
+<section class="drive-game" id="ibiza-game">
+<div class="drive-heading"><p class="eyebrow">GAME_01 // ARCADE MODE</p><h2>IBIZA <span>NIGHT DRIVE</span></h2><p>Navigate the neon highway. Collect the beat.</p></div>
+<div class="drive-machine">
+<div class="drive-topbar"><span>PLAYER 01</span><span class="drive-live"><span class="status-dot"></span>NIGHT SHIFT</span><button type="button" class="drive-expand" id="drive-expand">⛶ EXPAND GAME</button></div>
+<div class="drive-hud"><div><span>SCORE</span><strong id="drive-score">000000</strong></div><div><span>NOTES</span><strong id="drive-notes">00</strong></div><div><span>BEST</span><strong id="drive-best">000000</strong></div></div>
+<div class="drive-screen" id="drive-screen"><canvas id="drive-canvas" width="480" height="640" tabindex="0" role="img" aria-label="Ibiza Night Drive. Use arrow keys or A and D to steer."></canvas>
+<div class="drive-overlay" id="drive-overlay"><div class="drive-overlay-box"><p class="drive-overline" id="drive-overline">WELCOME PLAYER 01</p><h3 id="drive-message">NIGHT<br>DRIVE</h3><p id="drive-description">Dodge obstacles.<br>Collect music notes.<br>Own the highway.</p><button class="drive-action" id="drive-action">START ENGINE</button><small>ARCADE BUILD 01</small></div></div></div>
+<div class="drive-controls"><button class="drive-control" id="drive-left" aria-label="Steer left">&#9664;</button><span>STEER</span><button class="drive-control" id="drive-right" aria-label="Steer right">&#9654;</button><button class="drive-pause" id="drive-pause" disabled>PAUSE</button></div>
+<div class="drive-instructions"><p>KEYBOARD: LEFT / RIGHT OR A / D</p><p>MOBILE: USE STEERING BUTTONS</p></div>
+</div></section>
+
+<script src="ArcadeScoreSubmit.js"></script>
+<script src="IbizaDrive.js"></script>
+</body>
+</html>

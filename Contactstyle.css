@@ -1,0 +1,906 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+
+    background: #07111f;
+
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* =========================
+   ANIMATED GLOW BACKGROUND
+========================= */
+
+.glow {
+    position: fixed;
+    inset: -50%;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 30% 40%,
+            rgba(124, 58, 237, 0.65),
+            transparent 40%
+        ),
+        radial-gradient(
+            ellipse at 70% 60%,
+            rgba(6, 182, 212, 0.55),
+            transparent 40%
+        );
+
+    background-size: 200% 200%;
+    filter: blur(70px);
+
+    animation: glowMove 12s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove {
+    from {
+        transform: translate(-3%, -2%);
+    }
+
+    to {
+        transform: translate(3%, 2%);
+    }
+}
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+
+
+/* =========================
+   DYNAMIC GLASS NAVBAR
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+    width: 100%;
+    min-height: 75px;
+    padding: 15px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+    /* Glass effect */
+    background: rgba(10, 15, 30, 0.45);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    /* Glass border */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+    position: relative;
+    isolation: isolate;
+    z-index: 100;
+
+    /* Entrance animation */
+    animation: navbarEntrance 0.9s ease-out both;
+
+    transition: box-shadow 0.4s ease;
+}
+
+/* Moving gradient inside the glass */
+.navbar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        120deg,
+        rgba(139, 92, 246, 0.2),
+        rgba(59, 130, 246, 0.12),
+        rgba(236, 72, 153, 0.18),
+        rgba(139, 92, 246, 0.2)
+    );
+
+    background-size: 300% 300%;
+    animation: gradientFlow 10s ease infinite;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Animated glass highlight */
+.navbar::after {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.9),
+        transparent
+    );
+
+    animation: glassShine 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    color: white;
+    text-decoration: none;
+
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+.logo span {
+    color: #a78bfa;
+    text-shadow: 0 0 15px #8b5cf6;
+}
+
+.logo:hover {
+    transform: scale(1.04);
+    text-shadow: 0 0 18px rgba(167, 139, 250, 0.7);
+}
+
+/* =========================
+   NAVIGATION LINKS
+========================= */
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    color: #e5e7eb;
+    text-decoration: none;
+
+    display: block;
+    padding: 11px 15px;
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    border: 1px solid transparent;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Hover: glowing glass button */
+.navbar ul li a:hover {
+    color: white;
+
+    background: rgba(139, 92, 246, 0.2);
+    border-color: rgba(196, 181, 253, 0.4);
+
+    box-shadow:
+        0 0 12px rgba(139, 92, 246, 0.2),
+        inset 0 0 12px rgba(255, 255, 255, 0.04);
+
+    transform: translateY(-3px);
+}
+
+/* Subtle underline animation */
+.navbar ul li a::after {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    bottom: 5px;
+
+    width: 0;
+    height: 2px;
+
+    background: #a78bfa;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #8b5cf6;
+
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+    width: 55%;
+    left: 22.5%;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes glassShine {
+    0%, 15% {
+        left: -100%;
+    }
+
+    65%, 100% {
+        left: 150%;
+    }
+}
+
+@keyframes navbarEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 5%;
+    }
+
+    .navbar ul {
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .navbar ul li a {
+        padding: 9px 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 24px;
+    }
+
+    .navbar ul {
+        gap: 3px;
+    }
+
+    .navbar ul li a {
+        padding: 8px 7px;
+        font-size: 12px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .navbar,
+    .navbar::before,
+    .navbar::after {
+        animation: none;
+    }
+
+    .navbar ul li a,
+    .logo {
+        transition: none;
+    }
+}
+
+/* =========================
+   SLIDING GLASS INDICATOR
+========================= */
+
+.navbar .nav-links {
+    position: relative;
+    isolation: isolate;
+}
+
+/* The moving glass bubble */
+
+.navbar .nav-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    border: 1px solid rgba(196, 181, 253, 0.55);
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(167, 139, 250, 0.27),
+        rgba(96, 165, 250, 0.12),
+        rgba(236, 72, 153, 0.14)
+    );
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.25),
+        0 0 18px rgba(139, 92, 246, 0.22);
+
+    transition:
+        width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+        height 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+        transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+        opacity 0.2s ease;
+}
+
+/* Keep links above the bubble */
+
+.navbar .nav-links li {
+    position: relative;
+    z-index: 1;
+}
+
+.navbar .nav-links .nav-link {
+    position: relative;
+    background: transparent;
+    border-color: transparent;
+}
+
+/* Active page text */
+
+.navbar .nav-links .nav-link.active {
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(196, 181, 253, 0.45);
+}
+
+/* Let the bubble provide the hover background */
+
+.navbar .nav-links .nav-link:hover {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Keep the underline effect disabled;
+   the bubble is the active indicator */
+
+.navbar .nav-links .nav-link::after {
+    display: none;
+}
+
+/* Keyboard accessibility */
+
+.navbar .nav-links .nav-link:focus-visible {
+    outline: 2px solid #c4b5fd;
+    outline-offset: 2px;
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .navbar .nav-indicator {
+        transition: none;
+    }
+}
+
+
+/* =========================
+   FAST PAGE TRANSITIONS
+========================= */
+
+body {
+    opacity: 1;
+    animation: pageFadeIn 0.25s ease-out both;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+body.page-leaving {
+    opacity: 0;
+    transition: opacity 0.15s ease-in;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body,
+    body.page-leaving {
+        animation: none;
+        transition: none;
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   CONTACT PAGE DESIGN
+========================= */
+
+.contact-container {
+    width: min(1100px, 90%);
+    margin: 75px auto;
+    position: relative;
+}
+
+/* PAGE HEADING */
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: contactFadeUp 0.8s ease both;
+}
+
+.contact-header h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+
+    background: linear-gradient(
+        100deg,
+        #ffffff,
+        #c084fc,
+        #38bdf8
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-header p {
+    color: #b8c2d6;
+    font-size: 1.05rem;
+    margin-top: 18px;
+}
+
+.heading-line {
+    width: 70px;
+    height: 4px;
+    margin: 18px auto;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #a855f7,
+        #06b6d4
+    );
+
+    box-shadow: 0 0 18px rgba(139, 92, 246, 0.6);
+}
+
+/* TWO-COLUMN LAYOUT */
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+/* GLASS CARDS */
+
+.contact-info,
+.contact-form-container {
+    padding: 35px;
+
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 24px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+
+    animation: contactFadeUp 0.8s ease both;
+}
+
+.contact-info:hover,
+.contact-form-container:hover {
+    border-color: rgba(167, 139, 250, 0.4);
+    box-shadow: 0 15px 45px rgba(124, 58, 237, 0.12);
+}
+
+.contact-info h2,
+.contact-form-container h2 {
+    font-size: 1.55rem;
+    margin-bottom: 15px;
+}
+
+/* CONTACT INFORMATION */
+
+.contact-info .heading-line {
+    margin: 15px 0 22px;
+    width: 55px;
+    height: 3px;
+}
+
+.contact-description {
+    color: #b8c2d6;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 15px 12px;
+    margin-bottom: 12px;
+
+    border: 1px solid transparent;
+    border-radius: 16px;
+
+    transition: 0.3s ease;
+}
+
+.contact-item:hover {
+    background: rgba(139, 92, 246, 0.09);
+    border-color: rgba(167, 139, 250, 0.25);
+    transform: translateX(5px);
+}
+
+.contact-icon {
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.35rem;
+    color: #d8b4fe;
+
+    background: linear-gradient(
+        135deg,
+        rgba(139, 92, 246, 0.25),
+        rgba(6, 182, 212, 0.12)
+    );
+
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    border-radius: 14px;
+}
+
+.contact-item h3 {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.contact-item p {
+    color: #b8c2d6;
+    font-size: 0.88rem;
+    overflow-wrap: anywhere;
+}
+
+/* FORM LAYOUT */
+
+.contact-form-container h2 {
+    margin-bottom: 25px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #e5e7eb;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: white;
+
+    background: rgba(5, 10, 25, 0.65);
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.form-group input {
+    min-height: 50px;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #7f8ba3;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #a855f7;
+
+    background: rgba(10, 12, 30, 0.9);
+
+    box-shadow:
+        0 0 0 4px rgba(168, 85, 247, 0.12),
+        0 0 20px rgba(168, 85, 247, 0.1);
+}
+
+/* SEND BUTTON */
+
+.send-button {
+    width: 100%;
+    padding: 15px 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        100deg,
+        #9333ea,
+        #6366f1,
+        #0891b2
+    );
+
+    background-size: 200% 100%;
+
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.25);
+
+    transition:
+        background-position 0.4s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.send-button:hover {
+    background-position: 100% 0;
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px rgba(139, 92, 246, 0.4);
+}
+
+.send-button:active {
+    transform: translateY(-1px);
+}
+
+/* CONTACT PAGE ANIMATION */
+
+@keyframes contactFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 900px) {
+    .contact-container {
+        margin: 55px auto;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info,
+    .contact-form-container {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-container {
+        width: 92%;
+        margin: 40px auto;
+    }
+
+    .contact-header {
+        margin-bottom: 30px;
+    }
+
+    .contact-header h1 {
+        letter-spacing: -1px;
+    }
+
+    .contact-info,
+    .contact-form-container {
+        padding: 22px 18px;
+        border-radius: 18px;
+    }
+
+    .contact-info h2,
+    .contact-form-container h2 {
+        font-size: 1.35rem;
+    }
+
+    .contact-item {
+        gap: 12px;
+        padding: 12px 6px;
+    }
+
+    .contact-icon {
+        width: 43px;
+        height: 43px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-header,
+    .contact-info,
+    .contact-form-container {
+        animation: none;
+    }
+
+    .contact-item,
+    .send-button,
+    .contact-info,
+    .contact-form-container {
+        transition: none;
+    }
+}
+
+/* Clickable contact links */
+
+.contact-link {
+    display: inline-block;
+    color: #c4b5fd;
+    text-decoration: none;
+    font-size: 0.88rem;
+    overflow-wrap: anywhere;
+
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #67e8f9;
+    text-shadow: 0 0 12px rgba(103, 232, 249, 0.4);
+    text-decoration: underline;
+}
+
+.contact-link:focus-visible {
+    outline: 2px solid #a78bfa;
+    outline-offset: 4px;
+    border-radius: 3px;
+}
+
+.phone-copy {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.copy-btn {
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(139, 92, 246, 0.2);
+    color: white;
+    border: 1px solid #8b5cf6;
+    padding: 5px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.3s ease;
+}
+
+.phone-copy:hover .copy-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.copy-btn:hover {
+    background: #8b5cf6;
+    transform: translateY(-2px);
+}
+
+/* Keep the Copy button visible on touchscreens */
+@media (hover: none) {
+    .copy-btn {
+        opacity: 1;
+        visibility: visible;
+    }
+}

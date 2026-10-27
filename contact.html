@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="Contactstyle.css">
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="glow"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            Julio du Plessis<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+            <!-- Animated glass bubble -->
+            <span class="nav-indicator"></span>
+
+            <li>
+                <a href="index.html" class="nav-link">
+                    &#127968; Home
+                </a>
+            </li>
+
+            <li>
+                <a href="Myself.html" class="nav-link">
+                    &#128100; Myself
+                </a>
+            </li>
+
+            <li>
+                <a href="Work.html" class="nav-link">
+                    &#128187; Work
+                </a>
+            </li>
+
+            <li>
+                <a href="Hobbies.html" class="nav-link">
+                    &#128279; Hobbies
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html" class="nav-link active">
+                    &#9993; Contact
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Contact Section -->
+    <main class="contact-container">
+
+        <!-- Page Heading -->
+        <header class="contact-header">
+            <h1>Contact Me</h1>
+            <div class="heading-line"></div>
+
+            <p>
+                Have a question or an opportunity?
+                I'd love to hear from you.
+            </p>
+        </header>
+
+        <!-- Two-column layout -->
+        <section class="contact-content">
+
+            <!-- Left: Contact Information -->
+            <div class="contact-info">
+
+                <h2>Get In Touch</h2>
+                <div class="heading-line"></div>
+
+                <p class="contact-description">
+                    Feel free to reach out to me using
+                    any of the contact details below.
+                </p>
+
+<div class="contact-item">
+    <span class="contact-icon">&#9993;</span>
+    <div>
+        <h3>Email</h3>
+        <a href="mailto:julioduplessis83@gmail.com" class="contact-link" target="_blank">
+            julioduplessis83@gmail.com
+        </a>
+    </div>
+</div>
+
+
+<div class="contact-item">
+    <div class="contact-icon">📞</div>
+
+    <div class="contact-details">
+        <h3>Phone</h3>
+
+        <div class="phone-copy">
+            <a href="tel:+27634679787" id="phoneNumber">
+                +27 63 467 9787
+            </a>
+
+            <button
+                class="copy-btn"
+                onclick="copyPhoneNumber()"
+                type="button">
+                Copy
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="contact-item">
+    <span class="contact-icon">&#128205;</span>
+    <div>
+        <h3>Location</h3>
+        <a
+            href="https://www.google.com/maps/search/?api=1&query=South+Africa"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-link"
+        >
+            View my location on Google Maps
+        </a>
+    </div>
+</div>
+
+<div class="contact-item">
+    <span class="contact-icon">&#128247;</span>
+    <div>
+        <h3>Instagram</h3>
+        <a
+            href="https://www.instagram.com/mr_du_plessis_/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-link"
+        >
+            @mr_du_plessis_
+        </a>
+    </div>
+</div>
+
+</div> <!-- Closes contact-info -->
+
+            <!-- Right: Contact Form -->
+            <div class="contact-form-container">
+
+                <h2>Send Me a Message</h2>
+            
+                <form id="contactForm">
+
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            placeholder="What is your message about?"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            placeholder="Write your message here..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="send-button">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="navbar.js"></script>
+
+<script>
+async function copyPhoneNumber() {
+    const phone = document.getElementById("phoneNumber").textContent.trim();
+    const button = document.querySelector(".copy-btn");
+
+    try {
+        await navigator.clipboard.writeText(phone);
+        button.textContent = "Copied!";
+
+        setTimeout(() => {
+            button.textContent = "Copy";
+        }, 1500);
+    } catch (error) {
+        alert("Please copy the phone number manually: " + phone);
+    }
+}
+</script>
+
+<!-- Supabase JavaScript library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+    const supabaseClient = window.supabase.createClient(
+        "https://pchnomunqfcwqeitciqz.supabase.co",
+        "sb_publishable_alng8Ic4ZsgfSvAPwo7W6w_L--gqpY-"
+    );
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const submitButton = contactForm.querySelector(
+            'button[type="submit"], input[type="submit"]'
+        );
+
+        const originalText = submitButton
+            ? submitButton.textContent
+            : "";
+
+        const formData = new FormData(contactForm);
+
+        const messageData = {
+            name: formData.get("name")?.trim(),
+            email: formData.get("email")?.trim(),
+            subject: formData.get("subject")?.trim() || null,
+            message: formData.get("message")?.trim()
+        };
+
+        if (!messageData.name ||
+            !messageData.email ||
+            !messageData.message) {
+            alert("Please fill in your name, email and message.");
+            return;
+        }
+
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+        }
+
+        try {
+            const { error } = await supabaseClient
+                .from("contact_messages")
+                .insert([messageData]);
+
+            if (error) {
+                throw error;
+            }
+
+            alert("Message sent successfully!");
+            contactForm.reset();
+
+        } catch (error) {
+            console.error("Supabase error:", error);
+            alert("Sorry, your message could not be sent. Please try again.");
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = originalText || "Send Message";
+            }
+        }
+    });
+
+</script>
+
+
+</body>
+</html>

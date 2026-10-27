@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <title>Hobbies | Julio du Plessis</title>
+
+    <link rel="stylesheet" href="Hobbiestyle.css">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="glow"></div>
+    <div class="stars"></div>
+    <div class="stars stars-two"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            Julio du Plessis<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+            <span class="nav-indicator"></span>
+
+            <li>
+                <a href="index.html" class="nav-link">
+                    &#127968; Home
+                </a>
+            </li>
+
+            <li>
+                <a href="Myself.html" class="nav-link">
+                    &#128100; Myself
+                </a>
+            </li>
+
+            <li>
+                <a href="Work.html" class="nav-link">
+                    &#128187; Work
+                </a>
+            </li>
+
+            <li>
+                <a href="Hobbies.html" class="nav-link active">
+                    &#128279; Hobbies
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html" class="nav-link">
+                    &#9993; Contact
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- MAIN ARCADE CONTENT -->
+    <main class="arcade-container">
+
+        <!-- Arcade Introduction -->
+        <section class="arcade-hero">
+
+            <div class="arcade-label">
+                <span class="status-dot"></span>
+                PERSONAL ARCADE // PLAYER 01
+            </div>
+
+            <h1>
+                MY <span>PIXEL ARCADE</span>
+            </h1>
+
+            <p class="arcade-subtitle">
+                These are my hobbies, represented through
+                small interactive mini-games.
+            </p>
+
+            <p class="arcade-description">
+                From cars and music to technology and gaming,
+                explore the things I enjoy in a different way.
+                Choose a game and let the fun begin.
+            </p>
+
+            <a href="#game-library" class="arcade-button">
+                <span>&#9654;</span> EXPLORE THE GAMES
+            </a>
+
+            <div class="arcade-stats">
+                <div>
+                    <strong>05</strong>
+                    <span>GAME IDEAS</span>
+                </div>
+
+                <div>
+                    <strong>01</strong>
+                    <span>PLAYER</span>
+                </div>
+
+                <div>
+                    <strong>∞</strong>
+                    <span>FUN</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Game Library -->
+        <section class="game-library" id="game-library">
+
+            <div class="section-heading">
+                <p class="eyebrow">SELECT YOUR GAME</p>
+                <h2>THE <span>ARCADE</span></h2>
+                <p>
+                    A collection of my interests,
+                    turned into little challenges.
+                </p>
+            </div>
+
+
+
+<!-- ARCADE PLAYER REGISTRATION -->
+<section class="player-registration" aria-labelledby="player-title">
+    <div class="player-panel">
+        <div class="coin-entry" id="coin-entry" aria-hidden="true">
+    <div class="arcade-cabinet">
+        <div class="cabinet-marquee">ARCADE</div>
+        <div class="cabinet-screen"><span>INSERT COIN</span></div>
+        <div class="cabinet-controls"><i></i><i></i><i></i></div>
+        <div class="cabinet-slot"><span></span></div>
+        <div class="cabinet-base"></div>
+    </div>
+    <span class="arcade-coin">★</span>
+</div>
+
+        <div class="player-panel-icon">👾</div>
+
+        <p class="player-eyebrow">PLAYER IDENTIFICATION // 001</p>
+        <h2 id="player-title">READY TO <span>PLAY?</span></h2>
+
+        <p class="player-description">
+            Choose your three-letter player tag before entering the arcade.
+            Your tag will follow you between games.
+        </p>
+
+        <form id="player-form" class="player-form">
+            <label for="player-tag">YOUR PLAYER TAG</label>
+
+            <div class="player-input-row">
+                <input
+                    type="text"
+                    id="player-tag"
+                    name="player-tag"
+                    placeholder="JDP"
+                    maxlength="3"
+                    minlength="3"
+                    pattern="[A-Za-z]{3}"
+                    autocomplete="off"
+                    aria-describedby="player-message"
+                    required
+                >
+
+                <button type="submit" id="player-submit">
+                    ENTER ARCADE &#9654;
+                </button>
+            </div>
+
+            <p id="player-message" class="player-message" role="status">
+                Enter exactly three letters, such as JDP.
+            </p>
+        </form>
+
+        <div class="active-player" id="active-player" hidden>
+            <span class="player-online-dot"></span>
+            ACTIVE PLAYER:
+            <strong id="active-player-tag">---</strong>
+            <button type="button" id="change-player">CHANGE</button>
+        </div>
+    </div>
+</section>
+<!-- END PLAYER REGISTRATION -->
+
+<div class="game-grid">
+
+    <!-- GAME 1: IBIZA NIGHT DRIVE -->
+    <article class="game-card car-game">
+        <div class="game-preview">
+            <span class="game-number">GAME_01</span>
+            <div class="pixel-art car-art">
+                <span>&#128663;</span>
+            </div>
+            <span class="preview-tag">DRIVE MODE</span>
+        </div>
+
+        <div class="game-info">
+            <p class="game-category">CARS / ARCADE</p>
+            <h3>Ibiza Night Drive</h3>
+            <p>Dodge obstacles, collect music notes and own the neon highway.</p>
+
+            <div class="game-footer">
+                <span class="game-status">PLAYABLE</span>
+                <span class="game-index">01 / 05</span>
+            </div>
+
+            <a class="game-launch"
+   href="IbizaNightDrive.html"
+   target="_blank" rel="noopener">
+    &#9654; PLAY NOW
+</a>
+        </div>
+    </article>
+
+    <!-- GAME 2: BEAT CATCHER -->
+    <article class="game-card music-game">
+        <div class="game-preview">
+            <span class="game-number">GAME_02</span>
+            <div class="pixel-art music-art">
+                <span>&#9835;</span>
+            </div>
+            <span class="preview-tag">RHYTHM MODE</span>
+        </div>
+
+        <div class="game-info">
+            <p class="game-category">MUSIC / RHYTHM</p>
+            <h3>Beat Catcher</h3>
+            <p>Catch falling notes, build combos and chase your high score.</p>
+
+            <div class="game-footer">
+                <span class="game-status">PLAYABLE</span>
+                <span class="game-index">02 / 05</span>
+            </div>
+
+            <a class="game-launch"
+   href="BeatCatcher.html"
+   target="_blank" rel="noopener">
+    &#9654; PLAY NOW
+</a>
+        </div>
+    </article>
+
+    <!-- GAME 3: PACKET PANIC -->
+    <article class="game-card it-game">
+        <div class="game-preview">
+            <span class="game-number">GAME_03</span>
+            <div class="pixel-art it-art">
+                <span>&#128187;</span>
+            </div>
+            <span class="preview-tag">SYSTEM MODE</span>
+        </div>
+
+        <div class="game-info">
+            <p class="game-category">IT / NETWORKING</p>
+            <h3>Packet Panic</h3>
+            <p>Connect network nodes, route data and restore the connection.</p>
+
+            <div class="game-footer">
+                <span class="game-status">PLAYABLE</span>
+                <span class="game-index">03 / 05</span>
+            </div>
+
+            <a class="game-launch"
+   href="PacketPanic.html"
+   target="_blank" rel="noopener">
+    &#9654; PLAY NOW
+</a>
+        </div>
+    </article>
+
+    <!-- GAME 4: NEON SURVIVOR -->
+    <article class="game-card adventure-game">
+        <div class="game-preview">
+            <span class="game-number">GAME_04</span>
+            <div class="pixel-art adventure-art">
+                <span>&#127918;</span>
+            </div>
+            <span class="preview-tag">SURVIVAL MODE</span>
+        </div>
+
+        <div class="game-info">
+            <p class="game-category">GAMING / SURVIVAL</p>
+            <h3>Neon Survivor</h3>
+            <p>Dodge asteroids, collect energy and survive the neon void.</p>
+
+            <div class="game-footer">
+                <span class="game-status">PLAYABLE</span>
+                <span class="game-index">04 / 05</span>
+            </div>
+
+            <a class="game-launch"
+   href="NeonSurvivor.html"
+   target="_blank" rel="noopener">
+    &#9654; PLAY NOW
+</a>
+        </div>
+    </article>
+
+    <!-- GAME 5: CYBER MAZE -->
+    <article class="game-card network-game">
+        <div class="game-preview">
+            <span class="game-number">GAME_05</span>
+            <div class="pixel-art network-art">
+                <span>&#127760;</span>
+            </div>
+            <span class="preview-tag">NETWORK MODE</span>
+        </div>
+
+        <div class="game-info">
+            <p class="game-category">PUZZLE / EXPLORATION</p>
+            <h3>Cyber Maze</h3>
+            <p>Collect energy, find the key and escape the security drone.</p>
+
+            <div class="game-footer">
+                <span class="game-status">PLAYABLE</span>
+                <span class="game-index">05 / 05</span>
+            </div>
+
+            <a class="game-launch"
+   href="CyberMaze.html"
+   target="_blank" rel="noopener">
+    &#9654; PLAY NOW
+</a>
+        </div>
+    </article>
+
+</div>
+
+<!-- ARCADE LEADERBOARD -->
+<section class="arcade-leaderboard" aria-labelledby="leaderboard-title">
+
+    <div class="leaderboard-heading">
+        <p class="player-eyebrow">GLOBAL RANKINGS // TOP PLAYERS</p>
+        <h2 id="leaderboard-title">ARCADE <span>LEADERBOARD</span></h2>
+        <p>Every player has a score to beat. Will yours make the board?</p>
+
+        <div class="leaderboard-live-status">
+            <span class="player-online-dot"></span>
+            <span id="leaderboard-status">CONNECTING TO ARCADE DATABASE...</span>
+        </div>
+    </div>
+
+    <div class="leaderboard-table-wrap">
+        <table class="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>RANK</th>
+                    <th>PLAYER</th>
+                    <th>GAME</th>
+                    <th>SCORE</th>
+                </tr>
+            </thead>
+
+<tbody id="leaderboard-body">
+    <tr>
+        <td colspan="4">Loading arcade scores...</td>
+    </tr>
+</tbody>
+        </table>
+    </div>
+
+    <p class="leaderboard-note">
+    Scores recorded in the arcade database.
+</p>
+
+</section>
+<!-- END ARCADE LEADERBOARD -->
+
+        </section>
+            
+        <!-- Arcade Footer -->
+        <footer class="arcade-footer">
+            <div class="footer-line"></div>
+
+            <p>
+                <span>&#10022;</span>
+                BUILT WITH CURIOSITY, CODE & CREATIVITY
+                <span>&#10022;</span>
+            </p>
+
+            <small>
+                JULIO DU PLESSIS // PERSONAL ARCADE
+            </small>
+        </footer>
+
+    </main>
+
+    <!-- Navigation Script -->
+    <script src="navbar.js"></script>
+    <script src="Hobbies.js"></script>
+    <script src="IbizaDrive.js"></script>
+    <script src="BeatCatcher.js"></script>
+    <script src="PacketPanic.js"></script>
+    <script src="NeonSurvivor.js"></script>
+    <script src="CyberMaze.js"></script>
+    <script src="ArcadePlayer.js"></script>
+    <script src="ArcadeLeaderboard.js"></script>
+</body>
+</html>

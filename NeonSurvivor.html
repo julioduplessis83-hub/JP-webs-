@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neon Survivor | Julio du Plessis</title>
+<link rel="stylesheet" href="Hobbiestyle.css">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+</head>
+<body>
+<div class="glow"></div>
+<a href="Hobbies.html" class="back-to-arcade">← BACK TO ARCADE</a>
+
+<section class="survivor-game" id="neon-survivor">
+<div class="survivor-heading"><p class="survivor-eyebrow">GAME_04 // SURVIVAL MODE</p><h2>NEON <span>SURVIVOR</span></h2><p>Dodge the asteroids. Collect energy. Survive the neon void.</p></div>
+<div class="survivor-machine">
+<div class="survivor-topbar"><span>PLAYER 04</span><span class="survivor-live"><span class="survivor-status-dot"></span> SPACE SYSTEM ONLINE</span><button type="button" id="survivor-expand">⛶ EXPAND GAME</button></div>
+<div class="survivor-hud"><div class="survivor-stat"><span>SCORE</span><strong id="survivor-score">000000</strong></div><div class="survivor-stat"><span>ENERGY</span><strong id="survivor-energy">00</strong></div><div class="survivor-stat"><span>BEST</span><strong id="survivor-best">000000</strong></div></div>
+<div class="survivor-screen" id="survivor-screen"><canvas id="survivor-canvas" width="480" height="600" tabindex="0" role="img" aria-label="Neon Survivor. Use left/right arrows or A and D to steer."></canvas><div class="survivor-overlay" id="survivor-overlay"><div class="survivor-overlay-box"><p class="survivor-overline" id="survivor-overline">READY PLAYER 04</p><h3 id="survivor-message">NEON<br>SURVIVOR</h3><p id="survivor-description">Steer around asteroids.<br>Collect glowing energy orbs.<br>See how long you can last!</p><button type="button" id="survivor-action">START MISSION</button><small>ARCADE BUILD 04</small></div></div></div>
+<div class="survivor-controls"><button type="button" id="survivor-left" aria-label="Steer left">◀</button><span>STEER YOUR SHIP</span><button type="button" id="survivor-right" aria-label="Steer right">▶</button></div>
+<div class="survivor-actions"><button type="button" id="survivor-pause" disabled>PAUSE</button><button type="button" id="survivor-restart">RESTART</button></div><div class="survivor-instructions"><p>KEYBOARD: LEFT / RIGHT OR A / D</p><p>MOBILE: HOLD THE STEERING BUTTONS</p></div>
+</div></section>
+
+<script src="ArcadeScoreSubmit.js"></script>
+<script src="NeonSurvivor.js"></script>
+</body>
+</html>

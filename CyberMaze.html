@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Maze | Julio du Plessis</title>
+<link rel="stylesheet" href="Hobbiestyle.css">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+</head>
+<body>
+<div class="glow"></div>
+<a href="Hobbies.html" class="back-to-arcade">← BACK TO ARCADE</a>
+
+<section class="cyber-maze-game" id="cyber-maze">
+<div class="cyber-maze-heading"><p class="cyber-maze-eyebrow">GAME_05 // SYSTEM BREACH</p><h2>CYBER <span>MAZE</span></h2><p>Find the key. Collect the energy. Escape the maze.</p></div>
+<div class="cyber-maze-machine">
+<div class="cyber-maze-topbar"><span>PLAYER 05</span><span class="cyber-maze-live"><span class="cyber-maze-status-dot"></span> MAZE SYSTEM ONLINE</span><button type="button" id="maze-expand">⛶ EXPAND</button></div>
+<div class="cyber-maze-hud"><div class="cyber-maze-stat"><span>SCORE</span><strong id="maze-score">000000</strong></div><div class="cyber-maze-stat"><span>ENERGY</span><strong id="maze-energy">00</strong></div><div class="cyber-maze-stat"><span>TIME</span><strong id="maze-time">00:00</strong></div></div>
+<div class="cyber-maze-screen" id="maze-screen"><canvas id="maze-canvas" width="480" height="544" tabindex="0" role="img" aria-label="Cyber Maze. Use arrow keys or WASD to navigate."></canvas><div class="cyber-maze-overlay" id="maze-overlay"><div class="cyber-maze-overlay-box"><p class="cyber-maze-overline" id="maze-overline">READY PLAYER 05</p><h3 id="maze-message">CYBER<br>MAZE</h3><p id="maze-description">Explore the neon maze.<br>Collect energy and find the key.<br>Reach the exit to escape!</p><button type="button" id="maze-action">START MISSION</button><small>ARCADE BUILD 05</small></div></div></div>
+<div class="cyber-maze-controls"><button type="button" id="maze-up" aria-label="Move up">▲</button><div class="cyber-maze-side-controls"><button type="button" id="maze-left" aria-label="Move left">◀</button><button type="button" id="maze-down" aria-label="Move down">▼</button><button type="button" id="maze-right" aria-label="Move right">▶</button></div></div>
+<div class="cyber-maze-actions"><button type="button" id="maze-pause" disabled>PAUSE</button><button type="button" id="maze-restart">RESTART</button></div><div class="cyber-maze-instructions"><p>KEYBOARD: ARROWS / W A S D</p><p>OBJECTIVE: KEY → EXIT</p></div>
+</div></section>
+
+<script src="ArcadeScoreSubmit.js"></script>
+<script src="CyberMaze.js"></script>
+</body>
+</html>

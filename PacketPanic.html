@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Packet Panic | Julio du Plessis</title>
+<link rel="stylesheet" href="Hobbiestyle.css">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+</head>
+<body>
+<div class="glow"></div>
+<a href="Hobbies.html" class="back-to-arcade">← BACK TO ARCADE</a>
+
+<section class="packet-game" id="packet-panic">
+<div class="packet-heading"><span class="packet-eyebrow">GAME 03 / NETWORK OPERATIONS</span><h2>PACKET <span>PANIC</span></h2><p>Route the data. Restore the connection.</p></div>
+<div class="packet-machine">
+<div class="packet-topbar"><div><span class="packet-status-dot"></span> NETWORK SIMULATOR</div><span class="packet-level-label" id="packet-level">LEVEL 01</span></div>
+<div class="packet-hud"><div class="packet-stat"><span>SCORE</span><strong id="packet-score">000000</strong></div><div class="packet-stat"><span>LIVES</span><strong id="packet-lives">♥ ♥ ♥</strong></div><div class="packet-stat"><span>TIME</span><strong id="packet-time">60</strong></div><div class="packet-stat"><span>STREAK</span><strong id="packet-streak">0x</strong></div></div>
+<div class="packet-mission"><div><span class="packet-eyebrow">CURRENT MISSION</span><h3 id="packet-mission-title">Establish connection</h3><p id="packet-instructions">Activate the correct links between SOURCE and SERVER.</p></div><div class="packet-objective"><span>OBJECTIVE</span><strong id="packet-objective">SOURCE → SERVER</strong></div></div>
+<div class="packet-board" id="packet-board"><div class="packet-board-label">LIVE NETWORK TOPOLOGY</div><div class="packet-network" id="packet-network"><svg id="packet-wires" viewBox="0 0 600 320" preserveAspectRatio="none" aria-label="Network connection links"></svg><div id="packet-links"></div><div id="packet-nodes"></div></div><div class="packet-board-footer"><span>● SOURCE</span><span>● ROUTER</span><span>● SERVER</span></div></div>
+<div class="packet-feedback" id="packet-feedback" aria-live="polite">Select network links to build your route.</div>
+<div class="packet-controls"><button type="button" id="packet-test">⚡ TEST CONNECTION</button><button type="button" id="packet-reset">↻ RESET ROUTE</button><button type="button" id="packet-pause">PAUSE</button><button type="button" id="packet-expand">⛶ EXPAND GAME</button></div>
+<div class="packet-help"><span>HOW TO PLAY</span><p>Click a link to activate it. Connect SOURCE to SERVER using the correct route. Test your connection before the timer runs out.</p></div>
+<div class="packet-overlay" id="packet-overlay"><div class="packet-overlay-card"><span class="packet-eyebrow" id="packet-overline">READY, TECHNICIAN?</span><h3 id="packet-message">PACKET<br>PANIC</h3><p id="packet-description">Restore the network and deliver the packets.</p><button type="button" id="packet-action">START MISSION</button></div></div>
+</div></section>
+
+<script src="ArcadeScoreSubmit.js"></script>
+<script src="PacketPanic.js"></script>
+</body>
+</html>
